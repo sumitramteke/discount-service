@@ -1,0 +1,26 @@
+<div>
+  <table
+    mat-table
+    [dataSource]="$data | async"
+    class="full-width-table"
+    aria-label="Offers"
+  >
+    <!-- Name Column -->
+    <mat-text-column name="name"></mat-text-column>
+
+    <!-- Id Column -->
+    <mat-text-column name="percent"></mat-text-column>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="edit" (click)="showInfo(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

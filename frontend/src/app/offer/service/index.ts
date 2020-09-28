@@ -1,0 +1,1 @@
+export { OfferService } from './service';

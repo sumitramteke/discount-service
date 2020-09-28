@@ -1,0 +1,18 @@
+.full-width-table {
+  width: 100%;
+  tr.mat-header-row {
+    height: 2.5rem;
+  }
+  tr.mat-row {
+    height: 2rem;
+  }
+  tbody {
+    overflow-y: scroll !important;
+    height: 3rem !important;
+  }
+}
+.mat-column-id {
+  button {
+    float: right;
+  }
+}

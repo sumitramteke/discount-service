@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"discountapp.offer"}],"uuid":"bbd66b4695964b6c88ef7de4b4a6b359"}

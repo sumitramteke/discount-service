@@ -1,0 +1,20 @@
+<form [formGroup]="rForm" fxLayout="row" fxLayoutGap="1rem">
+  <mat-form-field appearance="standard" fxFlex="60">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+    <mat-icon matSuffix>local_offer</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" fxFlex="20">
+    <mat-label>Percent</mat-label>
+    <input matInput formControlName="percent"/>
+    <mat-icon matSuffix>%</mat-icon>
+  </mat-form-field>
+
+  <div fxFlex="15" class="submit">
+    <button type="submit" [disabled]="!rForm.valid" mat-stroked-button
+      color="primary" (click)="saveOrUpdate()">
+      {{ !!rForm.get('id').value ? 'Update': 'Add' }}
+    </button>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+<div class="mat-elevation-z5 container">
+  <mat-toolbar>
+    <span>Recipient</span>
+  </mat-toolbar>
+  <recipient-info [recipient]="recipient" (onRecipientApply)="onApplyRecipient()"></recipient-info>
+  <recipient-list [reload]="reloadRecipientList" (activeRecipient)="activeRecipient($event)"></recipient-list>
+</div>

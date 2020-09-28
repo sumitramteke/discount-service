@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "1f149ac4-3784-4a31-ae4f-66fc03f8142d",
+		"name": "Discount Service",
+		"description": "BlazeClan Technical Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "recepients",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Larry Stock\",\r\n    \"email\": \"ben.stock@sandbox.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/recipients",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"recipients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/recipients",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"recipients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"5f6d7f4606422b3a91190120\",\r\n        \"name\": \"Jhon Stock\",\r\n        \"email\": \"ben.stock@sandbox.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/recipients",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"recipients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/recipients/5f6d7f9606422b3a91190121",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"recipients",
+								"5f6d7f9606422b3a91190121"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "offers",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lucky Week20\",\r\n    \"percent\": \"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/offers",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/offers",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"5f6d92b489224212fec2550b\",\r\n        \"name\": \"Lucky Week25\",\r\n        \"percent\": \"25\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/offers",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/offers/5f6d932889224212fec2550d",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"offers",
+								"5f6d932889224212fec2550d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "discounts",
+			"item": [
+				{
+					"name": "Add",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "dec61b39-578f-458d-aed6-86c2c64c1f54",
+								"exec": [
+									"let currDt = new Date();\r",
+									"currDt.setMonth( currDt.getMonth() + 2 );\r",
+									"pm.environment.set(\"expiryDt\", currDt.toLocaleString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"recipientId\": \"5f6d7f3106422b3a9119011f\",\r\n    \"offerId\": \"5f6d929189224212fec2550a\",\r\n    \"expiryDt\": \"2020-09-27T16:00:00Z\"\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/discounts",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/discounts",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Coupon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jhon.snow@sandbox.com\",\r\n    \"code\": \"11bb39e7-f55e-422b-93a6-67852dd7631f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/discounts",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"discounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/discounts/5f6f79a74b853f74e5e4701d",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"discounts",
+								"5f6f79a74b853f74e5e4701d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d4ae3fbd-1467-4484-9238-ad03c35a26bb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "082ffec4-cda7-4daf-a324-c6aa3f4e3c04",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a7c58c1a-4f8c-4aa4-b257-a518de6245cd",
+			"key": "api",
+			"value": "http://localhost:8080/api"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

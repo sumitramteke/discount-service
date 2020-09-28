@@ -1,0 +1,7 @@
+<div class="mat-elevation-z5 container">
+  <mat-toolbar>
+    <span>Offer</span>
+  </mat-toolbar>
+  <offer-info [offer]="offer" (onOfferApply)="onApplyOffer()"></offer-info>
+  <offer-list [reload]="reloadOfferList" (activeOffer)="activeOffer($event)"></offer-list>
+</div>
