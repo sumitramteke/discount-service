@@ -34,7 +34,13 @@ import {
   OfferListComponent,
   OfferService,
 } from './offer';
-import { DiscountContainerComponent, DiscountService } from './discount';
+import {
+  DiscountApplyComponent,
+  DiscountContainerComponent,
+  DiscountsByRecipientPipe,
+  DiscountService,
+  DiscountToggleListComponent,
+} from './discount';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +50,10 @@ import { DiscountContainerComponent, DiscountService } from './discount';
     OfferInfoComponent,
     RecipientContainerComponent,
     OfferContainerComponent,
-    DiscountContainerComponent
+    DiscountContainerComponent,
+    DiscountApplyComponent,
+    DiscountToggleListComponent,
+    DiscountsByRecipientPipe,
   ],
   imports: [
     BrowserModule,

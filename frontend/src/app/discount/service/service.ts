@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Discount, DiscountPayload } from '..';
+import { ApplyDiscount, Discount, DiscountPayload } from '..';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class DiscountService {
     return this.http.post<Array<Discount>>(DiscountService.uri, discounts);
   }
 
-  update(discount: DiscountPayload): Observable<Discount> {
-    return this.http.put<Discount>(`${DiscountService.uri}/${discount.id}`, discount);
+  applyDiscount(payload: ApplyDiscount): Observable<Discount> {
+    return this.http.put<Discount>(`${DiscountService.uri}`, payload);
   }
 
   delete(id: String): Observable<Discount> {

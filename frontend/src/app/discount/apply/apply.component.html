@@ -1,0 +1,19 @@
+<form [formGroup]="rForm" fxLayout="row" fxLayoutGap="1rem">
+  <mat-form-field appearance="standard" fxFlex="30">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" fxFlex="50">
+    <mat-label>Code</mat-label>
+    <input matInput formControlName="code" />
+    <mat-icon matSuffix>shopping_cart</mat-icon>
+  </mat-form-field>
+
+  <div fxFlex="15" class="submit">
+    <button type="submit" [disabled]="!rForm.valid" mat-flat-button  color="accent" (click)="saveOrUpdate()">
+      Apply
+    </button>
+  </div>
+</form>

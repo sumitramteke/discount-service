@@ -8,8 +8,6 @@ public class DiscountReqPayload {
 
   private String code;
 
-  private Date createdDt;
-
   public String getEmail() {
     return email;
   }
@@ -24,14 +22,6 @@ public class DiscountReqPayload {
 
   public void setCode(String code) {
     this.code = code;
-  }
-
-  public Date getCreatedDt() {
-    return createdDt;
-  }
-
-  public void setCreatedDt(Date createdDt) {
-    this.createdDt = createdDt;
   }
 
 }
